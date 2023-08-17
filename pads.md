@@ -1,3 +1,3 @@
 # Bonding Pads
 
-![GPU_pads](/imgstore/GPU_pads.jpg)
+![gpu_pads](/imgstore/gpu_pads.jpg)
