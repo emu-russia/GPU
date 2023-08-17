@@ -12,8 +12,15 @@ GPU control from the CPU side is carried out only two IO-ports `GP0` and `GP1`, 
 
 The GPU is built using the same technology as the CPU (standard cells + custom blocks):
 
+Old 160-pin GPU:
+
 |![GPU_chip_lowres](/imgstore/GPU_chip_lowres.jpg)|![GPU_standard_cells](/imgstore/GPU_standard_cells.jpg)|
 |---|---|
+
+New GPU (8561BQ):
+
+|![gpu_10x_sm](/imgstore/gpu_10x_sm.jpg)|![gpu_demo_001_sm](/imgstore/gpu_demo_001_sm.jpg)|![gpu_demo_002_sm](/imgstore/gpu_demo_002_sm.jpg)|
+|---|---|---|
 
 ## Revisions
 
@@ -24,6 +31,9 @@ The GPU is built using the same technology as the CPU (standard cells + custom b
 |---|---|---|---|---|---|---|---|---|
 |IC203|![PU7_gpu_package](/imgstore/PU7_gpu_package.jpg)|![NewPU8_gpu_package](/imgstore/NewPU8_gpu_package.jpg)|![PU18_gpu_package](/imgstore/PU18_gpu_package.jpg)|???|![PU22_gpu_package](/imgstore/PU22_gpu_package.jpg)|![PU23_gpu_package](/imgstore/PU23_gpu_package.jpg)|![PM41_gpu_package](/imgstore/PM41_gpu_package.jpg)|![PM412_gpu_package](/imgstore/PM412_gpu_package.jpg)|
 |CXD|8514Q/2923AR|8561Q|8561BQ|???|8561CQ|8561CQ|8561CQ|???|
+
+> ![NOTE]
+> Revision 8561BQ is being studied on this site
 
 ## Hardware interface (old GPU 160-pin)
 
