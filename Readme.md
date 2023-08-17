@@ -10,7 +10,7 @@ Additionally, the GPU is engaged in video signal mastering (for example, manages
 
 GPU control from the CPU side is carried out only two IO-ports `GP0` and `GP1`, as well as DMA, for the transfer of display lists (DL).
 
-The GPU is built using the same technology as the CPU (standard cells + custom blocks):
+The GPU is built using the same technology as the CPU (standard cells + custom blocks).
 
 Old 160-pin GPU:
 
