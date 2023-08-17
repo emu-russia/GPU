@@ -1,5 +1,7 @@
 # GPU
 
+## Overview
+
 GPU (Graphics Processor Unit) draws two-dimensional primitives in the video memory and outputs the picture to the TV.
 
 ![GPU_overview](/imgstore/GPU_overview.jpg)
@@ -12,6 +14,8 @@ The GPU is built using the same technology as the CPU (standard cells + custom b
 
 |![GPU_chip_lowres](/imgstore/GPU_chip_lowres.jpg)|![GPU_standard_cells](/imgstore/GPU_standard_cells.jpg)|
 |---|---|
+
+## Revisions
 
 - The old versions of motherboards (PU-7 and old PU-8) used 2 GPU chips: 160pin CXD8514Q (IC203) and 64pin CXD2923AR (IC207). One of them was busy drawing primitives (the bigger 160pin one) and the other one was obviously outputting the picture from the video memory to the TV (the 64pin one). We have no manuals, so you can only find out more accurately from the motherboard pictures (trace the wires).
 - All other versions used 208pin versions of the GPU, the index remained the same (IC203).
