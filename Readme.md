@@ -32,7 +32,7 @@ New GPU (8561BQ):
 |IC203|![PU7_gpu_package](/imgstore/PU7_gpu_package.jpg)|![NewPU8_gpu_package](/imgstore/NewPU8_gpu_package.jpg)|![PU18_gpu_package](/imgstore/PU18_gpu_package.jpg)|???|![PU22_gpu_package](/imgstore/PU22_gpu_package.jpg)|![PU23_gpu_package](/imgstore/PU23_gpu_package.jpg)|![PM41_gpu_package](/imgstore/PM41_gpu_package.jpg)|![PM412_gpu_package](/imgstore/PM412_gpu_package.jpg)|
 |CXD|8514Q/2923AR|8561Q|8561BQ|???|8561CQ|8561CQ|8561CQ|???|
 
-> ![NOTE]
+> [!NOTE]
 > Revision 8561BQ is being studied on this site
 
 ## Hardware interface (old GPU 160-pin)
