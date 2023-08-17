@@ -14,8 +14,7 @@ The GPU is built using the same technology as the CPU (standard cells + custom b
 
 Old 160-pin GPU:
 
-|![GPU_chip_lowres](/imgstore/GPU_chip_lowres.jpg)|![GPU_standard_cells](/imgstore/GPU_standard_cells.jpg)|
-|---|---|
+![3590c46e2702f1be26fb677950bd95d6](/imgstore/3590c46e2702f1be26fb677950bd95d6.jpg)
 
 New GPU (8561BQ):
 
