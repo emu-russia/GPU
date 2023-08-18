@@ -85,3 +85,271 @@ typedef struct {
 	u_char	pad0, pad1;	/* reserved */
 } DISPENV;
 ```
+
+## Polygon Primitive Definitions
+
+```c
+typedef struct {
+	unsigned	addr: 24;
+	unsigned 	len:   8;
+	u_char		r0, g0, b0, code;
+} P_TAG;
+	
+typedef struct {
+	u_char	r0, g0, b0, code;
+} P_CODE;
+	
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	short	x1,	y1;
+	short	x2,	y2;
+} POLY_F3;				/* Flat Triangle */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	short	x1,	y1;
+	short	x2,	y2;
+	short	x3,	y3;
+} POLY_F4;				/* Flat Quadrangle */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	u0, v0;	u_short	clut;
+	short	x1,	y1;
+	u_char	u1, v1;	u_short	tpage;
+	short	x2,	y2;
+	u_char	u2, v2;	u_short	pad1;
+} POLY_FT3;				/* Flat Textured Triangle */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	u0, v0;	u_short	clut;
+	short	x1,	y1;
+	u_char	u1, v1;	u_short	tpage;
+	short	x2,	y2;
+	u_char	u2, v2;	u_short	pad1;
+	short	x3,	y3;
+	u_char	u3, v3;	u_short	pad2;
+} POLY_FT4;				/* Flat Textured Quadrangle */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	r1, g1, b1, pad1;
+	short	x1,	y1;
+	u_char	r2, g2, b2, pad2;
+	short	x2,	y2;
+} POLY_G3;				/* Gouraud Triangle */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	r1, g1, b1, pad1;
+	short	x1,	y1;
+	u_char	r2, g2, b2, pad2;
+	short	x2,	y2;
+	u_char	r3, g3, b3, pad3;
+	short	x3,	y3;
+} POLY_G4;				/* Gouraud Quadrangle */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	u0, v0;	u_short	clut;
+	u_char	r1, g1, b1, p1;
+	short	x1,	y1;
+	u_char	u1, v1;	u_short	tpage;
+	u_char	r2, g2, b2, p2;
+	short	x2,	y2;
+	u_char	u2, v2;	u_short	pad2;
+} POLY_GT3;				/* Gouraud Textured Triangle */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	u0, v0;	u_short	clut;
+	u_char	r1, g1, b1, p1;
+	short	x1,	y1;
+	u_char	u1, v1;	u_short	tpage;
+	u_char	r2, g2, b2, p2;
+	short	x2,	y2;
+	u_char	u2, v2;	u_short	pad2;
+	u_char	r3, g3, b3, p3;
+	short	x3,	y3;
+	u_char	u3, v3;	u_short	pad3;
+} POLY_GT4;				/* Gouraud Textured Quadrangle */
+```
+
+## Line Primitive Definitions
+
+```c
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	short	x1,	y1;
+} LINE_F2;				/* Unconnected Flat Line */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	r1, g1, b1, p1;
+	short	x1,	y1;
+} LINE_G2;				/* Unconnected Gouraud Line */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	short	x1,	y1;
+	short	x2,	y2;
+	u_long	pad;
+} LINE_F3;				/* 2 connected Flat Line */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	r1, g1, b1, p1;
+	short	x1,	y1;
+	u_char	r2, g2, b2, p2;
+	short	x2,	y2;
+	u_long	pad;
+} LINE_G3;				/* 2 connected Gouraud Line */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	short	x1,	y1;
+	short	x2,	y2;
+	short	x3,	y3;
+	u_long	pad;
+} LINE_F4;				/* 3 connected Flat Line Quadrangle */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	r1, g1, b1, p1;
+	short	x1,	y1;
+	u_char	r2, g2, b2, p2;
+	short	x2,	y2;
+	u_char	r3, g3, b3, p3;
+	short	x3,	y3;
+	u_long	pad;
+} LINE_G4;				/* 3 connected Gouraud Line */
+```
+
+## Sprite Primitive Definitions
+
+```c
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	u0, v0;	u_short	clut;
+	short	w,	h;
+} SPRT;					/* free size Sprite */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	u0, v0;	u_short	clut;
+} SPRT_16;				/* 16x16 Sprite */
+	       
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	u_char	u0, v0;	u_short	clut;
+} SPRT_8;				/* 8x8 Sprite */
+```
+
+## Tile Primitive Definitions
+
+```c
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+	short	w,	h;
+} TILE;					/* free size Tile */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+} TILE_16;				/* 16x16 Tile */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+} TILE_8;				/* 8x8 Tile */
+
+typedef struct {
+	u_long	tag;
+	u_char	r0, g0, b0, code;
+	short	x0, 	y0;
+} TILE_1;				/* 1x1 Tile */
+```
+
+## Special Primitive Definitions
+
+```c
+typedef struct {
+	u_long	tag;
+	u_long	code[2];
+} DR_MODE;				/* Drawing Mode */
+
+typedef struct {
+	u_long	tag;
+	u_long	code[2];
+} DR_TWIN;				/* Texture Window */
+	       
+typedef struct {
+	u_long	tag;
+	u_long	code[2];
+} DR_AREA;				/* Drawing Area */
+	       
+typedef struct {
+	u_long	tag;
+	u_long	code[2];
+} DR_OFFSET;				/* Drawing Offset */
+	       
+typedef struct {			/* MoveImage */
+	u_long	tag;
+	u_long	code[5];
+} DR_MOVE;
+
+typedef struct {			/* LoadImage */
+	u_long	tag;
+	u_long	code[3];
+	u_long	p[13];
+} DR_LOAD;
+
+typedef	struct {
+	u_long	tag;
+	u_long	code[1];
+} DR_TPAGE;				/* Drawing TPage */
+
+typedef struct {
+        u_long  tag;
+        u_long  code[2];
+} DR_STP;                               /* Drawing STP */
+```
