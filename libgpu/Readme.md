@@ -47,7 +47,7 @@ Texture Attributes:
 Texture mode (tp):
  
 |tp	|0	|1	|2	|
-|---|---|---|---|---|
+|---|---|---|---|
 |depth|	4bit|	8bit|	16bit|
 |color|	CLUT|	CLUT|	DIRECT|
 
