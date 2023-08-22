@@ -2,6 +2,52 @@
 
 Decompiling the libgpu library from PsyQ.
 
+## Findings
+
+What interesting things are found in libgpu:
+
+Set bit 11 in Texture Page ID if the Y coordinate >= 512.
+
+|F E D C B A 9|8 7|6 5|4 |3 2 1 0|
+|---|---|---|---|---|
+|0 0 0 0 ? 0 0|tp |abr|ty|tx     |
+
+Apparently used for GPUs with 2 megabytes of VRAM (video buffer size 1024x1024); In ZN1 or Namco System 11 (arcades based on PSX hardware).
+
+The libgpu calls that work with hardware registers:
+There is a single module in the libgpu library that handles registers, sys.obj, and it contains the main calls to control the GPU. Specifically:
+
+- ResetGraph - writes reset commands to GP1.
+- DrawSync - works with GPU DMA.
+- SetDispMask - writes the command to GP1.
+- DrawPrim - executes the primitive by writing through IO to the GP0 register.
+
+GPU primitives are drawn in two ways - through normal GP0 writes (slow way) and through GPU DMA.
+DMA transfers become a program queue (GPU Queue, queue length 64). If the queue fails to complete in 240 VSync, a GPU Timeout occurs (a message is displayed, the queue is cleared, and the DMA transfer is canceled).
+
+Queue execution (and hence drawing) takes place after DrawSync is called. There is no separate thread for updating the queue.
+
+The name of GP1 register is "stat", mentioned in the GPU timeout message. So doomed gives the correct name and official name of GP1 register: "GPU Status Register". That's the investigation :)
+The same applies to DMA registers. Their names are mentioned as: "chcr", "madr".
+
+Full GPU reset:
+- GPU_DMA_CHCR = 0x0401
+- DMA_PCR |= 0x0800
+- GP1 = 0x00000000
+- GP1 = 0x09000001 	(Only if the GPU version obtained with the 0x10000007 command = 2)
+
+Cancel all drawing operations and clear the command buffer:
+- GPU_DMA_CHCR = 0x0401
+- DMA_PCR |= 0x0800
+- GP1 = 0x02000000
+- GP1 = 0x01000000
+
+Screen enable:
+- GP1 = 0x03000001
+
+Screen disable:
+- GP1 = 0x03000000
+
 ## Primitive list
 
 |Name    |Size (in long-word)|Shade  |Vertex |Texture| Function  |
