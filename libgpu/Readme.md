@@ -4,7 +4,7 @@ Decompiling the libgpu library from PsyQ.
 
 ## Findings
 
-What interesting things are found in libgpu:
+What interesting things are found in libgpu.
 
 Set bit 11 in Texture Page ID if the Y coordinate >= 512.
 
